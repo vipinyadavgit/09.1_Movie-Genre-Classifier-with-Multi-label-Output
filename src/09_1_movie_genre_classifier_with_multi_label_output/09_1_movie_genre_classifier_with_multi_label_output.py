@@ -10,15 +10,19 @@ Original file is located at
 # Importing essential libraries
 import pandas as pd
 import numpy as np
+from pathlib import Path
+
+
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 # Load the 'movie_metadata.tsv' dataset
-movie_metadata = pd.read_csv('/content/sample_data/movie_metadata.tsv', sep='\t', header=None)
+movie_metadata = pd.read_csv(PROJECT_ROOT / 'movie_metadata.tsv', sep='\t', header=None)
 
 # Display the first 5 rows to verify
-display(movie_metadata.head())
+print(movie_metadata.head())
 
 # Loading the 'plot_summaries.tsv' dataset
-plot_summary = pd.read_csv('/content/sample_data/plot_summaries.tsv', sep='\t', header=None)
+plot_summary = pd.read_csv(PROJECT_ROOT / 'plot_summaries.tsv', sep='\t', header=None)
 
 """Exploring the dataset"""
 
